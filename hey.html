@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Letter</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            padding: 20px;
+            background-color: #ffeadb;
+            border: 2px solid #a48866;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            overflow: hidden;
+            animation: openPaper 5s ease-in-out forwards;
+        }
+
+        @keyframes openPaper {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: auto;
+            }
+        }
+
+        h1 {
+            color: #a48866;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        #message-container {
+            margin-top: 20px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        #message {
+            font-size: 24px;
+            color: #5e5e5e;
+            padding: 20px;
+            background-color: #fff9ec;
+            border: 1px solid #a48866;
+            border-radius: 8px;
+            white-space: pre-line;
+        }
+
+        #heart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            background-color: #e91e63;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 10px;
+            animation: beatHeart 1.5s infinite;
+        }
+
+        @keyframes beatHeart {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        #word-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .word {
+            display: inline-block;
+            margin: 0 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Dancing Kids Animation */
+        #left-kid, #right-kid {
+            position: fixed;
+            bottom: 0;
+            width: 100px;
+            height: 150px;
+            background: url('https://images.app.goo.gl/kThtSY9QyfJoQ4hr5') no-repeat;
+            background-size: cover;
+            animation: danceAnimation 2s infinite alternate;
+        }
+
+        #right-kid {
+            right: 0;
+            transform: scaleX(-1);
+            background: url('https://images.app.goo.gl/kThtSY9QyfJoQ4hr5') no-repeat;
+            background-size: cover;
+            animation-delay: 1s;
+        }
+
+        @keyframes danceAnimation {
+            from {
+                transform: translateY(0) rotate(0);
+            }
+            to {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        alert("Restrictedddd For Heyyymonthhhhh Kammilliiii");
+    </script>
+
+    <div id="heart-container">
+        <div class="heart">&hearts;</div>
+        <h1 id="word-container">
+            <span class="word">My</span>
+            <span class="word">Dearest</span>
+            <span class="word">Heyyyymmonthh Babbuuu,</span>
+        </h1>
+        <div class="heart">&hearts;</div>
+    </div>
+    <div id="message-container">
+        <div id="message"></div>
+    </div>
+    <!-- Dancing Kids -->
+    <div id="left-kid"></div>
+    <div id="right-kid"></div>
+
+    <script>
+        const message = `I knoww i am hard to handlee but, keep fightingg with mee. And Nva tryna give up on me!!
+I just saw a like of yours on reels for doing such htmls and thought of keeping a smile on ur face today.
+
+
+Okayy Byee... ika chaduvkoo peh`;
+
+        let letterIndex = 0;
+        const messageElement = document.getElementById('message');
+        
+        function displayLetterByLetter() {
+            if (letterIndex < message.length) {
+                messageElement.innerHTML += message.charAt(letterIndex);
+                letterIndex++;
+                setTimeout(displayLetterByLetter, 100); // Adjust the delay (in milliseconds) between letters
+            }
+        }
+
+        displayLetterByLetter();
+    </script>
+</body>
+</html>
